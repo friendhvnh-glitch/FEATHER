@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tin Tức</title>
+  <link rel="icon" href="../images/logo/LOGO_main.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+     * {margin:0;padding:0;box-sizing:border-box;}
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background: #f5f5f5;
+    }
+
+    /* ======= VIDEO BACKGROUND ======= */
+    .video-background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+
+    /* ======= LAYOUT ======= */
+    .container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+    }
+
+    /* ======= MAIN NEWS ======= */
+    .main-news {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .main-news img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .main-news h2 {
+      margin-bottom: 10px;
+      font-size: 22px;
+      color: #007b5e;
+    }
+    .main-news p {
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* ======= SIDE NEWS ======= */
+    .side-news {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      max-height: 600px; /* Chiều cao tối đa */
+      overflow-y: auto; /* Thanh cuộn dọc */
+    }
+    .side-news h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #007b5e;
+    }
+    .side-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+    .side-item img {
+      width: 100px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .side-item div {
+      flex: 1;
+    }
+    .side-item h4 {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+    .side-item p {
+      font-size: 13px;
+      color: #666;
+    }
+
+    /* Scrollbar custom */
+    .side-news::-webkit-scrollbar {
+      width: 8px;
+    }
+    .side-news::-webkit-scrollbar-thumb {
+      background: #007b5e;
+      border-radius: 4px;
+    }
+    .side-news::-webkit-scrollbar-track {
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+     <div class="navbar_1">
+    <nav>
+      <div class="navbar-inner">
+        <a class="welcome-text" href="#">Chào mừng bạn đến với FEATH – Nơi tìm kiếm phong cách cho riêng mình!</a>
+        <div class="contact">
+          <div class="contact-item">📞 0378295055</div>
+          <a class="contact-item zalo" href="https://zalo.me/g/vpdgks851" style="color: black;">Chat Zalo</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Header Section -->
+  <div class="navigation">
+    <header class="main-header">
+        <div class="logo">
+            <a href="#">
+                <img src="../images/logo/LOGO_main.png" alt="EventVista">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <i class="fa fa-bars"></i>
+        </div>
+
+        <nav class="main-nav">
+  <a href="../index.html">TRANG CHỦ</a>
+
+  <div class="dropdown">
+    <a href="#" class="city-link">SẢN PHẨM</a>
+    <div class="dropdown-content">
+      <div class="dropdown-region">
+      <a href="../products/feather.html">🌬️ FEATHER – The Lightness Within</a>
+      <a>🌿 GREEN ROOTS – Nature Reimagined</a>
+      <a>🕶️ TERRA – Rooted in Nature</a>
+      <a>✨ AURA – The Silent Grace</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="#">TIN TỨC</a>
+
+    <div class="dropdown">
+    <a href="../index.html" class="city-link">VỀ CHÚNG TÔI</a>
+      <div class="dropdown-content sub">
+        <div class="dropdown-region">
+          <a href="brand.html">🎶 Câu chuyện thương hiệu</a>
+          <a href="commit.html">🎭 Cam kết xanh</a>
+          <a href="partner.html"> 🎓 Đối tác - Khách hàng</a>
+          <a href="community.html"> ⚽ Chương trình cộng đồng</a>
+      </div> 
+    </div>
+  </div>
+  <a href="../TrangLienHe.html">LIÊN HỆ</a>
+</nav>
+
+  <div class="search-wrapper">
+    <div class="search-input-container">
+      <input type="text" placeholder="Tìm kiếm...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+  </div> 
+
+  <div class="user-dropdown">
+    <div class="user-icon" id="userIcon">
+        <i class="fa fa-user"></i>
+    </div>
+    <div class="login" id="userMenu">
+        <a href="../user/DangKy_DangNhap.html">Đăng ký</a>
+        <a href="../user/DangKy_DangNhap.html">Đăng nhập</a>
+    </div>
+</div>
+</header>
+</div>
+
+<!-- Video nền -->
+  <video autoplay muted loop class="video-background">
+    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+  </video>
+
+  <div class="container">
+    <!-- Tin chính -->
+    <div class="main-news">
+      <img src="../images/blog/blog2.png" alt="Tin chính">
+      <h2>FEATHER ra mắt bộ sưu tập túi tái chế 2025</h2>
+      <p>Tháng 9/2025, FEATHER chính thức trình làng bộ sưu tập túi thời trang tái chế với thiết kế hiện đại, đa dạng màu sắc và kiểu dáng. Bộ sưu tập này không chỉ hướng đến thời trang bền vững mà còn mang thông điệp bảo vệ môi trường tới cộng đồng. Các sản phẩm đều được làm từ sợi PP tái chế, thân thiện và bền chắc, góp phần giảm thiểu rác thải nhựa trong đời sống hàng ngày.</p>
+    </div>
+
+    <!-- Tin phụ -->
+    <div class="side-news">
+      <h3>Tin nổi bật khác</h3>
+      <div class="side-item">
+        <img src="https://picsum.photos/200/100?random=2">
+        <div>
+          <h4>FEATHER đồng hành cùng học sinh</h4>
+          <p>Chương trình tặng 1.000 túi tái sử dụng tại trường học.</p>
+        </div>
+      </div>
+      <div class="side-item">
+        <img src="https://picsum.photos/200/100?random=3">
+        <div>
+          <h4>Sự kiện "Sống xanh 2025"</h4>
+          <p>FEATHER tham gia hội chợ triển lãm bảo vệ môi trường.</p>
+        </div>
+      </div>
+      <div class="side-item">
+        <img src="https://picsum.photos/200/100?random=4">
+        <div>
+          <h4>Workshop tái chế sáng tạo</h4>
+          <p>Khách tham gia học cách biến túi cũ thành phụ kiện.</p>
+        </div>
+      </div>
+      <div class="side-item">
+        <img src="https://picsum.photos/200/100?random=5">
+        <div>
+          <h4>Khách hàng FEATHER đạt 50.000+</h4>
+          <p>Con số kỷ lục sau 5 năm hoạt động bền vững.</p>
+        </div>
+      </div>
+      <div class="side-item">
+        <img src="https://picsum.photos/200/100?random=6">
+        <div>
+          <h4>Chiến dịch "Đổi túi nhựa lấy FEATHER"</h4>
+          <p>Đã thu gom hơn 20 tấn túi nhựa tại Hà Nội.</p>
+        </div>
+      </div>
+      <div class="side-item">
+        <img src="https://picsum.photos/200/100?random=7">
+        <div>
+          <h4>FEATHER mở rộng hợp tác</h4>
+          <p>Ký kết với 30 siêu thị và chuỗi cửa hàng tiện lợi.</p>
+        </div>
+      </div>
+        <div class="side-item">
+        <img src="https://picsum.photos/200/100?random=2">
+        <div>
+          <h4>FEATHER đồng hành cùng học sinh</h4>
+          <p>Chương trình tặng 1.000 túi tái sử dụng tại trường học.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="footer-container">
+    <!-- Cột 1: Thông tin liên hệ -->
+    <div class="footer-column">
+      <p><strong>Hotline</strong><br>📞 Thứ 2 - Chủ Nhật (8:30 - 23:00)<br>
+        <span class="hotline-number">0123.456.789</span>
+      </p>
+      <p><strong>Email</strong><br>📧 supportFeath@feather.vn</p>
+      <p><strong>Văn phòng</strong><br>
+        📍 Số 12 Học viện Ngân Hàng, Đống Đa, Hà Nội
+      </p>
+    </div>
+
+    <!-- Cột 2: Dành cho khách + tổ chức + đăng ký email -->
+    <div class="footer-column">
+      <p><strong>Dành cho Khách hàng</strong></p>
+      <a href="../chinhsach/KhachHang.html">Điều khoản sử dụng cho khách hàng</a>
+
+      <p><strong>Dành cho Nhà Sản Xuất</strong></p>
+      <a href="../chinhsach/ToChuc.html">Điều khoản sử dụng cho nhà sản xuất</a>
+
+      <p><strong>Đăng ký nhận email về các sản phẩm mới nhất</strong></p>
+      <div class="email-subscribe">
+        <span class="email-icon">✅</span>
+        <input type="email" id="emailInput" placeholder="Your Email">
+        <button class="send-btn" onclick="checkEmail()">➤</button>
+      </div>
+      <p id="errorMsg" style="color: rgb(239, 85, 85); display: none;">Vui lòng nhập email</p>
+    </div>
+
+    <!-- Cột 3: Chính sách -->
+     <div class="footer-column">
+      <p><strong>Về chúng tôi</strong></p>
+      <p><a href="">Quy chế hoạt động</a></p>
+      <p><a href="">Chính sách bảo mật thông tin</a></p>
+      <p><a href="">Cơ chế giải quyết tranh chấp/ khiếu nại</a></p>
+      <p><a href="">Chính sách bảo mật thanh toán</a></p>
+      <p><a href="">Chính sách đổi trả và kiểm hàng</a></p>
+      <p><a href="">Điều kiện vận chuyển và giao nhận</a></p>
+      <p><a href="">Phương thức thanh toán</a></p>
+    </div>
+  </div>
+</footer>
+
+  <!-- Nút Zalo với chữ -->
+  <a id="zaloBtn" href="" target="_blank" title="Liên hệ Zalo">
+    Zalo
+  </a>
+
+  <!-- Nút lên đầu trang -->
+  <button id="backToTopBtn" title="Lên đầu trang">
+    <i class="fas fa-home"></i>
+  </button>
+
+<!-- JS riêng của header - footer -->
+<script src="../js/learn.js"></script>
+
+<!-- JS chỉ riêng trang Home -->
+<script src="../js/home.js"></script>
+
+
+</body>
+</html>

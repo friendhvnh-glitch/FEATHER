@@ -1,0 +1,118 @@
+
+   :root{--accent:#c27b6b;--muted:#666;--bg:#f7f7f7;--card:#fff}
+
+    .container{max-width:1100px;margin:0 auto}
+    .breadcrumb{font-size:14px;color:var(--muted);margin-bottom:12px}
+
+    .product-grid{display:grid;grid-template-columns:1fr 420px;gap:28px}
+    @media (max-width:900px){.product-grid{grid-template-columns:1fr;}}
+
+    /* Gallery */
+    .gallery{background:var(--card);margin: 10px; padding:14px;box-shadow:0 6px 18px rgba(10,10,10,0.06)}
+    .main-image{width:100%;aspect-ratio:4/3;display:block;border-radius:8px;object-fit:cover}
+    .thumbs{display:flex;gap:8px;margin-top:10px}
+    .thumb{width:60px;height:60px;border-radius:8px;overflow:hidden;flex:0 0 60px;cursor:pointer;border:2px solid transparent}
+    .thumb img{width:100%;height:100%;object-fit:cover}
+    .thumb.active{border-color:var(--accent)}
+
+    /* Info */
+    .info{background:var(--card);margin: 10px; padding:20px;box-shadow:0 6px 18px rgba(10,10,10,0.06);position:relative}
+    .title{font-size:20px;font-weight:600;margin:5px 6px}
+    .sku{font-size:13px;color:var(--muted);margin-bottom:8px}
+    .price{font-size:22px;color:var(--accent);font-weight:700;margin-bottom:10px}
+    .oldprice{font-size:14px;color:var(--muted);text-decoration:line-through;margin-left:10px}
+
+    .options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 20px;
+        }
+
+    .option {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 48%; /* mỗi option chiếm khoảng 50% chiều ngang */
+        }
+
+    .option:nth-child(3) {
+        flex: 1 1 100%; /* Số lượng chiếm cả dòng */
+        }
+
+    .option label {
+        font-weight: 500;
+        margin-bottom: 6px;
+        }
+
+    .option select,
+    .option input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 15px;
+        outline: none;
+        transition: border-color 0.3s;
+        }
+
+    .option select:focus,
+    .option input:focus {
+        border-color: #000;
+        }
+
+.cta {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.cta .btn {
+  flex: 1 1 50%;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* Nút “Thêm vào giỏ” */
+#addCart {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+}
+
+#addCart:hover {
+  background-color: #5093ba;
+  color: #fff;
+}
+
+/* Nút “Mua ngay” */
+#buyNow {
+  background-color: #0e8166;
+  color: #fff;
+}
+
+#buyNow:hover {
+  opacity: 0.85;
+}
+
+    .meta{margin-top:14px;font-size:14px;color:var(--muted)}
+
+    /* Tabs */
+    .tabs{margin-top:22px;background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(10,10,10,0.06)}
+    .tab-buttons{display:flex;gap:8px;border-bottom:1px solid #eee}
+    .tab-buttons button{background:none;border:0;padding:12px 8px;cursor:pointer;font-weight:500;color:var(--muted)}
+    .tab-buttons button.active{border-bottom:3px solid var(--accent);color:#000;font-weight:600}
+    .tab-content{padding:14px 0;font-size:15px;line-height:1.6;color:#333}
+
+    /* Related products */
+    .related{margin:20px}
+    .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    @media (max-width:900px){.related-grid{grid-template-columns:repeat(2,1fr)}}
+    .card{background:var(--card);padding:10px;border-radius:10px;text-align:center}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .card .pname{font-size:14px;margin:8px 0}
+    .card .pprice{color:var(--accent);font-weight:700}
+

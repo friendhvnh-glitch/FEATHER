@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Câu chuyện thương hiệu</title>
+  <link rel="icon" href="../images/logo/LOGO_main.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    :root {
+      --green-600: #2e7d32;
+      --green-700: #1b5e20;
+      --accent: #e53935;
+      --text: #333;
+      --muted: #666;
+      --bg: #f7faf7;
+      --card: #ffffff;
+      --radius: 14px;
+      --shadow: 0 6px 18px rgba(0,0,0,.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+    h1, h2, h3 { color: var(--green-700); }
+
+    /* Hero section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url("https://picsum.photos/1200/400?green") center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+    .hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: auto;
+    color: #f0f0f0;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+
+    /* Section chung */
+    section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 24px;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    section h2 { margin-bottom: 12px; }
+
+    /* Values */
+    .values {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+    .value-item {
+      padding: 20px;
+      border-radius: var(--radius);
+      transition: 0.3s;
+    }
+    .value-item:hover {
+      background: #f1fdf1;
+      transform: translateY(-4px);
+    }
+    .value-item span {
+      font-size: 40px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin-top: 20px;
+      padding-left: 20px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 8px;
+      width: 4px; height: 100%;
+      background: var(--green-600);
+      border-radius: 2px;
+    }
+    .milestone {
+      margin: 20px 0;
+      position: relative;
+      padding-left: 30px;
+    }
+    .milestone::before {
+      content: "✔";
+      position: absolute;
+      left: -2px; top: 0;
+      color: var(--green-600);
+      background: #fff;
+      border: 2px solid var(--green-600);
+      border-radius: 50%;
+      width: 22px; height: 22px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .cta button {
+      background: var(--green-600);
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .cta button:hover { background: var(--green-700); }
+  </style>
+
+</head>
+<body>
+  <div class="navbar_1">
+    <nav>
+      <div class="navbar-inner">
+        <a class="welcome-text" href="#">Chào mừng bạn đến với EcoHouse – Nơi tìm kiếm phong cách cho riêng mình!</a>
+        <div class="contact">
+          <div class="contact-item">📞 0378295055</div>
+          <a class="contact-item zalo" href="https://zalo.me/g/vpdgks851" style="color: black;">Chat Zalo</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Header Section -->
+  <div class="navigation">
+    <header class="main-header">
+        <div class="logo">
+            <a href="#">
+                <img src="../images/logo/LOGO_main.png" alt="EventVista">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <i class="fa fa-bars"></i>
+        </div>
+
+        <nav class="main-nav">
+  <a href="../index.html">TRANG CHỦ</a>
+
+   <div class="dropdown">
+    <a href="#" class="city-link">SẢN PHẨM</a>
+    <div class="dropdown-content">
+      <div class="dropdown-region">
+      <a href="../products/feather.html">🌬️ FEATHER – The Lightness Within</a>
+      <a>🌿 GREEN ROOTS – Nature Reimagined</a>
+      <a>🕶️ TERRA – Rooted in Nature</a>
+      <a>✨ AURA – The Silent Grace</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="blog.html">TIN TỨC</a>
+
+    <div class="dropdown">
+    <a href="../index.html" class="city-link">VỀ CHÚNG TÔI</a>
+      <div class="dropdown-content sub">
+        <div class="dropdown-region">
+          <a href="#">🎶 Câu chuyện thương hiệu</a>
+          <a href="commit.html">🎭 Cam kết xanh</a>
+          <a href="partner.html"> 🎓 Đối tác - Khách hàng</a>
+          <a href="community.html"> ⚽ Chương trình cộng đồng</a>
+      </div> 
+    </div>
+  </div>
+  <a href="../TrangLienHe.html">LIÊN HỆ</a>
+</nav>
+
+  <div class="search-wrapper">
+    <div class="search-input-container">
+      <input type="text" placeholder="Tìm kiếm...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+  </div> 
+
+  <div class="user-dropdown">
+    <div class="user-icon" id="userIcon">
+        <i class="fa fa-user"></i>
+    </div>
+    <div class="login" id="userMenu">
+        <a href="../user/DangKy_DangNhap.html">Đăng ký</a>
+        <a href="../user/DangKy_DangNhap.html">Đăng nhập</a>
+    </div>
+</div>
+</header>
+</div>
+
+<!-- Hero -->
+  <div class="hero">
+    <h1>CÂU CHUYỆN THƯƠNG HIỆU</h1>
+    <p>Chúng tôi tin rằng mỗi chiếc túi không chỉ tiện lợi mà còn mang theo trách nhiệm với môi trường.</p>
+  </div>
+
+  <!-- About -->
+  <section>
+    <h2>Về chúng tôi</h2>
+<p>
+        FEATHER được sinh ra từ mong muốn đưa con người trở lại với sự cân bằng – giữa <strong>cái đẹp và sự giản đơn</strong>. 
+        Trong nhịp sống hiện đại, chúng ta thường mang theo quá nhiều – từ vật chất đến những kỳ vọng vô hình.
+        FEATHER chọn cách nhẹ đi, để mỗi sản phẩm không chỉ là một món đồ thời trang, mà còn là <strong>lời nhắc về sự tỉnh thức và ý thức sống xanh</strong>.
+      </p>
+      <p>
+        Chúng tôi tin rằng thời trang không cần phải đánh đổi môi trường. 
+        Từng chiếc túi được tạo ra từ <strong>vật liệu tái sinh</strong> và <strong>quy trình sản xuất có trách nhiệm</strong> – để mỗi lựa chọn của bạn là một hành động tích cực với Trái đất.
+      </p>
+      <p>
+        FEATHER không chạy theo xu hướng. 
+        Chúng tôi hướng tới sự <strong>tinh khiết trong cảm nhận</strong> và <strong>trường tồn trong giá trị</strong> – nơi cái đẹp đến từ sự tự nhiên, chứ không phải sự hoàn hảo.
+      </p>
+  </section>
+
+  <!-- Values -->
+  <section>
+    <h2>Giá trị cốt lõi</h2>
+    <div class="values">
+      <div class="value-item"><span>♻️</span>Thân thiện môi trường</div>
+      <div class="value-item"><span>🎨</span>Thiết kế thời trang</div>
+      <div class="value-item"><span>💪</span>Độ bền vượt trội</div>
+      <div class="value-item"><span>❤️</span>Trách nhiệm cộng đồng</div>
+    </div>
+  </section>
+
+  <!-- Commitment -->
+  <section>
+    <h2>Lời cam kết</h2>
+      <p>
+        FEATHER không chỉ tạo ra những chiếc túi, mà chúng tôi đang kiến tạo một hành trình – nơi thời trang gắn liền với ý thức và trách nhiệm. 
+        Chúng tôi hiểu rằng, mỗi sản phẩm bạn cầm trên tay đều mang theo một câu chuyện, một tác động và một lựa chọn cho tương lai. 
+        Vì thế, FEATHER cam kết hành động vì một thế giới nhẹ nhàng hơn – không chỉ trong từng thiết kế, mà trong chính cách chúng tôi tồn tại.
+      </p>
+
+      <p>
+        <strong>1. Cam kết về chất liệu:</strong><br>
+        Mọi sản phẩm của FEATHER được làm từ các chất liệu tái sinh, hữu cơ hoặc có khả năng phân hủy sinh học. 
+        Chúng tôi chọn cách làm chậm, tôn trọng quy luật tự nhiên và nói không với việc sử dụng nguyên liệu gây hại cho môi trường. 
+        Từ vải cotton hữu cơ, canvas tái chế cho đến sợi thực vật, mỗi lựa chọn đều được cân nhắc để giảm thiểu dấu chân carbon.
+      </p>
+
+      <p>
+        <strong>2. Cam kết về quy trình:</strong><br>
+        Chúng tôi hợp tác cùng các xưởng sản xuất nhỏ, tuân thủ tiêu chuẩn lao động công bằng và đảm bảo quyền lợi cho người thợ. 
+        Mỗi chiếc túi được tạo nên trong điều kiện làm việc an toàn, tôn trọng con người và không chạy theo sản lượng. 
+        Với FEATHER, giá trị của một sản phẩm không nằm ở số lượng, mà ở tình yêu và sự chăm chút trong từng đường kim mũi chỉ.
+      </p>
+
+      <p>
+        <strong>3. Cam kết về trách nhiệm xã hội:</strong><br>
+        Một phần lợi nhuận của FEATHER được trích cho các dự án bảo tồn môi trường và giáo dục cộng đồng về sống xanh. 
+        Chúng tôi tin rằng thay đổi bắt đầu từ những hành động nhỏ – từ việc tái sử dụng chiếc túi bạn mang mỗi ngày đến việc lựa chọn mua hàng có ý thức.
+      </p>
+
+      <p>
+        <strong>4. Cam kết về minh bạch và niềm tin:</strong><br>
+        FEATHER luôn công khai nguồn gốc nguyên liệu, quy trình sản xuất và định hướng phát triển. 
+        Chúng tôi mong muốn khách hàng không chỉ là người mua, mà là người đồng hành trong hành trình sống xanh, sống nhẹ.
+      </p>
+
+      <p>
+        Tại FEATHER, “sự nhẹ” không phải là xu hướng – đó là triết lý sống. 
+        Chúng tôi tin rằng khi con người biết buông bỏ những điều nặng nề, thế giới cũng trở nên trong trẻo hơn.  
+        Mỗi chiếc túi là một biểu tượng của niềm tin ấy – rằng cái đẹp có thể được tạo nên từ sự tỉnh thức, bền vững và lòng trân trọng.
+      </p>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <button onclick="goShop()">Khám phá sản phẩm</button>
+  </div>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Cột 1: Thông tin liên hệ -->
+    <div class="footer-column">
+      <p><strong>Hotline</strong><br>📞 Thứ 2 - Chủ Nhật (8:30 - 23:00)<br>
+        <span class="hotline-number">0123.456.789</span>
+      </p>
+      <p><strong>Email</strong><br>📧 supportFeath@feather.vn</p>
+      <p><strong>Văn phòng</strong><br>
+        📍 Số 12 Học viện Ngân Hàng, Đống Đa, Hà Nội
+      </p>
+    </div>
+
+    <!-- Cột 2: Dành cho khách + tổ chức + đăng ký email -->
+    <div class="footer-column">
+      <p><strong>Dành cho Khách hàng</strong></p>
+      <a href="../chinhsach/KhachHang.html">Điều khoản sử dụng cho khách hàng</a>
+
+      <p><strong>Dành cho Nhà Sản Xuất</strong></p>
+      <a href="../chinhsach/ToChuc.html">Điều khoản sử dụng cho nhà sản xuất</a>
+
+      <p><strong>Đăng ký nhận email về các sản phẩm mới nhất</strong></p>
+      <div class="email-subscribe">
+        <span class="email-icon">✅</span>
+        <input type="email" id="emailInput" placeholder="Your Email">
+        <button class="send-btn" onclick="checkEmail()">➤</button>
+      </div>
+      <p id="errorMsg" style="color: rgb(239, 85, 85); display: none;">Vui lòng nhập email</p>
+    </div>
+
+    <!-- Cột 3: Chính sách -->
+     <div class="footer-column">
+      <p><strong>Về chúng tôi</strong></p>
+      <p><a href="">Quy chế hoạt động</a></p>
+      <p><a href="">Chính sách bảo mật thông tin</a></p>
+      <p><a href="">Cơ chế giải quyết tranh chấp/ khiếu nại</a></p>
+      <p><a href="">Chính sách bảo mật thanh toán</a></p>
+      <p><a href="">Chính sách đổi trả và kiểm hàng</a></p>
+      <p><a href="">Điều kiện vận chuyển và giao nhận</a></p>
+      <p><a href="">Phương thức thanh toán</a></p>
+    </div>
+  </div>
+</footer>
+
+  <!-- Nút Zalo với chữ -->
+  <a id="zaloBtn" href="https://zalo.me/g/vpdgks851" target="_blank" title="Liên hệ Zalo">
+    Zalo
+  </a>
+
+  <!-- Nút lên đầu trang -->
+  <button id="backToTopBtn" title="Lên đầu trang">
+    <i class="fas fa-home"></i>
+  </button>
+
+<!-- JS riêng của header - footer -->
+<script src="../js/learn.js"></script>
+
+<!-- JS chỉ riêng trang Home -->
+<script src="../js/home.js"></script>
+
+<script>
+    function goShop(){
+       window.location.href = "../products/product.html";
+    }
+</script>
+</body>
+</html>

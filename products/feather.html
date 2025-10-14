@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FEATHER – The Lightness Within</title>
+  <link rel="icon" href="../images/logo/LOGO_main.png" type="image/x-icon">
+  <!-- Font & Icon -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #2f2f2f;
+      background-color: #fafafa;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ===== Hero Section ===== */
+.hero-header {
+  position: relative;
+  width: 100%;
+  height: 90vh; /* Chiếm 90% chiều cao màn hình */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo video phủ toàn màn */
+  z-index: 1;
+  filter: brightness(60%); /* Làm mờ nhẹ để chữ nổi bật */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Hiển thị trên video */
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 300;
+}
+
+
+    .intro {
+        background-image: url('../images/story/story5.png');
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: row;
+}
+
+.intro-text {
+  flex: 0 0 70%;
+  padding-left: 50px;
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.intro-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.intro-text strong {
+  color: #2c6e49;
+  font-weight: 600;
+}
+
+.intro-image {
+  flex: 0 0 30%;
+  display: flex;
+  justify-content: center;
+  padding-right: 50px;
+}
+
+.intro-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.intro-image img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+    /* SECTIONS */
+    section {
+      padding: 15px 100px;
+    }
+    
+    .intro, .story, .message {
+      margin-bottom: 80px;
+      text-align: justify;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 25px;
+      color: #3e5446;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100px;
+      height: 3px;
+      background-color: #a6c7b8;
+      border-radius: 2px;
+    }
+
+    /* GRID SẢN PHẨM */
+.product-showcase {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  letter-spacing: 5px;
+}
+
+/* --- Lưới sản phẩm --- */
+.product-grid {
+  display: grid;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.top-row {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.bottom-row {
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* --- Hiệu ứng hover & text đè lên ảnh --- */
+.product-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+  text-align: left;
+}
+
+.product-card:hover .product-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-info h3 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.product-info p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .top-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bottom-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-showcase {
+    padding: 60px 5%;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+
+    /* HÌNH + VĂN XEN KẼ */
+    .story-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 50px;
+      margin-top: 40px;
+    }
+
+    .story-block img {
+      flex: 1 1 350px;
+      border-radius: 18px;
+      width: 100%;
+      height: auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .story-text {
+      flex: 1 1 400px;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      section { padding: 60px 6%; }
+      .story-block { flex-direction: column; text-align: center; }
+      .story-block img { order: -1; }
+    }
+
+    .message {
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.message-line {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #4c6b52;
+  letter-spacing: 1px;
+  display: inline-block;
+  animation: softBlink 5s infinite ease-in-out;
+}
+
+/* Hiệu ứng nhấp nháy chậm và mềm */
+@keyframes softBlink {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(160, 240, 190, 0.9),
+                 0 0 20px rgba(140, 230, 180, 0.8);
+  }
+  50% {
+    opacity: 0.5;
+    text-shadow: 0 0 30px rgba(180, 255, 200, 1),
+                 0 0 60px rgba(160, 255, 210, 0.9);
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<header class="hero-header" data-aos="fade-down">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="../images/feather.mp4" type="video/mp4">
+    Trình duyệt của bạn không hỗ trợ video.
+  </video>
+
+  <div class="hero-content">
+    <h1>FEATHER – The Lightness Within</h1>
+    <p>Sự nhẹ không chỉ là cảm giác, mà là một triết lý sống.</p>
+  </div>
+</header>
+
+
+  <section class="intro" data-aos="fade-up">
+  <div class="intro-container">
+    <div class="intro-text">
+      <h2 class="section-title">Giới thiệu bộ sưu tập</h2>
+      <p>
+        Mọi thứ trong tự nhiên đều có trọng lượng – chỉ có ý thức là nhẹ. 
+        <br><br>
+        FEATHER ra đời từ cảm hứng về sự thanh thoát của lông vũ – hình ảnh của tự do, chuyển động và cân bằng tuyệt đối trong không gian.
+        Trong thế giới nơi con người bị bao vây bởi tiêu thụ và ồn ào, FEATHER chọn cách trở nên nhẹ – về vật chất và cả tinh thần.
+        <br><br>
+        Mỗi chiếc túi không chỉ là một vật dụng thời trang, mà là một tuyên ngôn sống chậm:
+        <strong><br>Sống nhẹ – nghĩ xanh – chạm đến bản thể tinh khiết của mình.</strong>
+      </p>
+    </div>
+
+    <div class="intro-image">
+      <img src="../images/logo/LOGO_main.png" alt="FEATHER Bag" />
+    </div>
+  </div>
+</section>
+
+  <section class="story" data-aos="fade-right">
+    <h2 class="section-title">Câu chuyện cảm hứng</h2>
+    <div class="story-block">
+      <div class="story-text">
+        <p>
+          “Nhẹ đi – để chạm đến điều có thật.”  
+          FEATHER không chỉ nói về thời trang. Nó nói về một cách tồn tại – khi con người học cách bỏ bớt những điều nặng nề: từ vật chất, kỳ vọng, cho đến dấu vết của tiêu thụ quá mức.  
+          Mỗi chiếc túi được tạo nên từ vật liệu tái sinh không chỉ giúp giảm gánh nặng cho môi trường, mà còn là biểu tượng của sự thức tỉnh – rằng cái đẹp không cần phải mới, chỉ cần được nhìn lại bằng một tâm thế khác.  
+          Trong thế giới luôn vội vàng, FEATHER chọn lối đi ngược – sống nhẹ để sống sâu.  
+          Bởi chỉ khi ta thật sự nhẹ, ta mới có thể bay.
+        </p>
+      </div>
+      <img src="../images/products/banner1.png" alt="FEATHER model">
+    </div>
+  </section>
+
+  <section class="product-showcase" data-aos="fade-up">
+  <h2 class="section-title">Sản phẩm trong bộ sưu tập</h2>
+
+  <!-- Hàng 1: 3 sản phẩm -->
+  <div class="product-grid top-row">
+    <a href="sanpham1.html" class="product-card" data-aos="zoom-in">
+      <img src="../images/products/product1.png" alt="FEATHER SAND">
+      <div class="product-info">
+        <h3>FEATHER SAND – Sand Beige</h3>
+        <p>Tote cao · Màu be cát ấm tự nhiên · 30x40cm</p>
+      </div>
+    </a>
+
+    <a href="sanpham2.html" class="product-card" data-aos="zoom-in" data-aos-delay="100">
+      <img src="../images/products/product2.png" alt="FEATHER SMOKE">
+      <div class="product-info">
+        <h3>FEATHER SMOKE – Smoke Grey</h3>
+        <p>Tote lớn · Màu xám khói mờ hiện đại · 35x46cm </p>
+      </div>
+    </a>
+
+    <a href="sanpham3.html" class="product-card" data-aos="zoom-in" data-aos-delay="200">
+      <img src="../images/products/product3.png" alt="FEATHER MIST">
+      <div class="product-info">
+        <h3>FEATHER MIST – Mist White</h3>
+        <p>Tote đứng · Màu trắng sương mờ · 35x26cm </p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Hàng 2: 2 sản phẩm -->
+  <div class="product-grid bottom-row">
+    <a href="sanpham4.html" class="product-card" data-aos="zoom-in">
+      <img src="../images/products/product4.png" alt="FEATHER SKY">
+      <div class="product-info">
+        <h3>FEATHER SKY – Sky Blush </h3>
+        <p>Túi nhỏ · Màu hồng phấn nhạt khói nhẹ · 26x34cm </p>
+      </div>
+    </a>
+
+    <a href="sanpham5.html" class="product-card" data-aos="zoom-in" data-aos-delay="100">
+      <img src="../images/products/product5.png" alt="FEATHER SAGE">
+      <div class="product-info">
+        <h3>FEATHER SAGE – Sage Green</h3>
+        <p>Tote ngang · Màu xanh xám nhẹ · 40x34cm </p>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+<section class="message" data-aos="fade-up">
+  <p class="message-line">
+    FEATHER – The Essence Of Air <br> Tinh chất của không khí.
+  </p>
+</section>
+
+
+  <!-- AOS animation script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true,
+      easing: 'ease-in-out'
+    });
+  </script>
+
+</body>
+</html>
