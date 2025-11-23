@@ -10,7 +10,7 @@ body, html {
 }
 
 .navbar_1 {
-  background: #38ac15;
+  background: #1e6a06;
   padding: 5px 5px;
   margin: 0 auto;
   box-shadow: 0 4px 6px rgba(219, 82, 82, 0.648);
@@ -75,21 +75,21 @@ animation: blink 1s infinite; /* Hiệu ứng chớp */
 }
 
 .main-header {
-  padding: 0px 15px;
+  padding: 10px 10px; /* tùy chỉnh padding tổng thể */
   display: flex;
-  align-items: center; /* Căn giữa các phần tử con theo chiều dọc */
-  justify-content: space-between; /* Phân bố khoảng trắng giữa logo, nav và actions */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative; /* Để định vị tuyệt đối cho user-icon nếu cần */
+  align-items: center;
+  justify-content: space-between; /* logo trái, nav + search + user phải */
 }
+
 
 /* Style cho logo */
 .logo img {
-  height: 100px;
-  width: 100px;
+  width: 150px; 
+  height: auto;
   display: block;
-  margin-left: 50px;
+  margin-left: 50px; 
 }
+
 
 .hamburger {
   display: none;
@@ -99,7 +99,7 @@ animation: blink 1s infinite; /* Hiệu ứng chớp */
   display: flex;
   gap: 60px; 
   align-items: center; 
-  margin-left: 35px;
+  margin-left: 20px;
 }
 
 .main-nav a {
@@ -107,7 +107,7 @@ animation: blink 1s infinite; /* Hiệu ứng chớp */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
-  padding: 10px 0;
+  padding: 5px 0;
   text-shadow: 1px 1px 2px #e8a599 ;
 }
 
@@ -118,7 +118,7 @@ animation: blink 1s infinite; /* Hiệu ứng chớp */
 
 nav {
   display: flex;
-  flex-grow: 1;
+  flex-grow: 0.5;
   justify-content:center; 
 }
 
@@ -137,12 +137,13 @@ nav a:hover {
 .dropdown {
   position: relative;
   display: inline-block;
+  z-index: 9999;
 }
 
 .dropdown-content {
   display: none; 
   position: absolute;
-  top: 130%;
+  top: 115%;
   left: 50%;
   transform: translateX(-50%);
   background-color: #ffffff;
@@ -365,11 +366,6 @@ nav a:hover {
     flex-wrap: wrap; 
     align-items: center;
     justify-content: space-between;
-  }
-
-  .logo {
-    flex: 60%;
-    max-height: 60px;
   }
 
   .hamburger {

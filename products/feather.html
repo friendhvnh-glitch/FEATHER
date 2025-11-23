@@ -41,38 +41,15 @@
   filter: brightness(60%); /* Làm mờ nhẹ để chữ nổi bật */
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2; /* Hiển thị trên video */
-  color: white;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  letter-spacing: 1.5px;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-}
-
-.hero-content p {
-  font-size: 1.3rem;
-  font-style: italic;
-  font-weight: 300;
-}
-
-
-    .intro {
-        background-image: url('../images/story/story5.png');
-  max-width: 1200px;
-  margin: 100px auto;
-  padding: 40px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .intro {
+    background-image: url('../images/story/story5.png');
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 .intro-container {
   display: flex;
@@ -238,6 +215,9 @@
   .bottom-row {
     grid-template-columns: 1fr;
   }
+  .intro-image{
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
@@ -246,6 +226,9 @@
   }
   .section-title {
     font-size: 1.5rem;
+  }
+  .intro-image{
+    display: none;
   }
 }
 
@@ -328,10 +311,6 @@
     <source src="../images/feather.mp4" type="video/mp4">
     Trình duyệt của bạn không hỗ trợ video.
   </video>
-
-  <div class="hero-content">
-    <h1>THE ESSENCE OF AIR</h1>
-  </div>
 </header>
 
 

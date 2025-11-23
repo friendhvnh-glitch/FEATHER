@@ -18,7 +18,7 @@
 }
 
 .image-info h2{
-    color: #0056b3; 
+    color: #026336; 
     margin-bottom: 5px; /* Khoảng cách giữa chữ và gạch ngang */
     font-size: 2em; 
     font-weight: bold;
@@ -32,7 +32,7 @@
 .underline {
   width: 200px;
   height: 4px;
-  background-color: #4da6ff;
+  background-color: #18a966;
   margin-top: 5px;
   border-top-right-radius: 8px;   /* Bo tròn góc phải trên */
   border-bottom-right-radius: 8px; /* Bo tròn góc phải dưới */
@@ -111,7 +111,7 @@
 
 /* Cột bên phải - Poster */
 .poster-column {
-  flex: 1; 
+  flex: 1.2; 
 }
 
 .poster-column img {

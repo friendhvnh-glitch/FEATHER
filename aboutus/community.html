@@ -17,9 +17,6 @@
 
   <style>
     :root{
-      --green: #2e7d32;
-      --green-dark: #1b5e20;
-      --bg: #f4f9f4;
       --card-bg: #fff;
       --shadow: 0 4px 16px rgba(0,0,0,0.08);
       --radius: 14px;
@@ -31,49 +28,18 @@
       color: #333;
     }
 
-    .hero {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    color: #fff;
-    text-align: center;
-    }
+.image-container {
+  width: 100%;          
+  height: auto;         
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
-    .hero-video {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
-    }
-
-    .overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 70, 30, 0.45); /* lớp phủ xanh trong suốt */
-    z-index: -1;
-    }
-
-    .hero-content {
-    padding: 0 20px;
-    }
-
-    .hero h1 {
-    font-size: 36px;
-    margin: 0 0 10px;
-    }
-
-    .hero p {
-    font-size: 18px;
-    margin: 0;
-    }
-
+.image-container img {
+  width: 100%;      
+  height: auto;    
+  display: block;    
+}
 
     .container{
       max-width: 1200px;
@@ -122,63 +88,56 @@
     .card-footer{
       padding: 12px 16px 16px;
     }
-    .btn{
-      background: var(--green);
-      color:#fff;
-      text-decoration: none;
-      padding:10px 16px;
-      border-radius:8px;
-      font-size:14px;
-      font-weight:600;
-      transition: background .2s ease;
-      display:inline-block;
-    }
-    .btn:hover{
-      background: var(--green-dark);
-    }
+.btn {
+  display: block;           /* chiếm toàn bộ dòng */
+  width: 100%;              /* kéo dài toàn chiều rộng card */
+  padding: 12px 0;          /* padding trên dưới */
+  background-color: #045332; /* màu chủ đạo */
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
 
-    /* Modal */
-    .modal{
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      display:none;
-      justify-content:center;
-      align-items:center;
-      z-index:1000;
-    }
-    .modal-content{
-      background:#fff;
-      max-width:600px;
-      width:90%;
-      border-radius: var(--radius);
-      padding:20px;
-      position:relative;
-      animation: fadeIn .3s ease;
-    }
-    .modal-content h2{
-      margin-top:0;
-      color: var(--green-dark);
-    }
-    .close-btn{
-      position:absolute;
-      top:12px;
-      right:16px;
-      font-size:20px;
-      cursor:pointer;
-      color:#555;
-    }
-    @keyframes fadeIn {
-      from{opacity:0; transform:translateY(-20px);}
-      to{opacity:1; transform:translateY(0);}
-    }
+.btn:hover {
+  background-color: #d65643;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+.detail-section {
+  display: none; /* ẩn mặc định */
+  padding: 20px;
+  margin-top: 30px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.detail-section img,
+.detail-section video {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.detail-section p {
+  line-height: 1.6;
+  text-align: justify;
+}
+
+
   </style>
 </head>
 <body>
      <div class="navbar_1">
     <nav>
       <div class="navbar-inner">
-        <a class="welcome-text" href="#">Chào mừng bạn đến với FEATHER – Nơi tìm kiếm phong cách cho riêng mình!</a>
+        <a class="welcome-text" href="#">Chào mừng bạn với FEATHER – Nơi tìm kiếm phong cách cho riêng mình!</a>
         <div class="contact">
           <div class="contact-item">📞 0378295055</div>
           <a class="contact-item zalo" href="https://zalo.me/g/vpdgks851" style="color: black;">Chat Zalo</a>
@@ -250,66 +209,56 @@
 </header>
 </div>
 
-<header class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="../video/community.mp4" type="video/mp4">
-    Trình duyệt không hỗ trợ video.
-  </video>
-  <div class="overlay"></div>
-  <div class="hero-content">
-    <h1>Chương trình cộng đồng</h1>
-    <p>Những hoạt động và dự án FEATHER đã và đang triển khai vì một tương lai xanh</p>
-  </div>
-</header>
+<div class="image-container">
+  <img src="../images/activity/community.png" alt="Community Activity">
+</div>
 
 
-  <main class="container">
-    <div class="grid">
-      <!-- Card 1 -->
-      <div class="card">
-        <img src="../images/activity/collect.png" alt="Thu gom túi nhựa">
-        <div class="card-content">
-          <h3>Chiến dịch thu gom túi nhựa</h3>
-          <p>FEATHER phối hợp với các trường đại học tại Hà Nội triển khai điểm thu gom túi nhựa đã qua sử dụng, góp phần giảm rác thải nhựa trong cộng đồng.</p>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn" data-article="1">Xem chi tiết</a>
-        </div>
+
+ <main class="container">
+  <div class="grid">
+    <!-- Card 1 -->
+    <div class="card">
+      <img src="../images/activity/collect.png" alt="Thu gom túi nhựa">
+      <div class="card-content">
+        <h3>Chiến dịch thu gom túi nhựa</h3>
+        <p>FEATHER phối hợp với các trường đại học tại Hà Nội triển khai điểm thu gom túi nhựa đã qua sử dụng, góp phần giảm rác thải nhựa trong cộng đồng.</p>
       </div>
-      <!-- Card 2 -->
-      <div class="card">
-        <img src="../images/activity/plant.png" alt="Trồng cây xanh">
-        <div class="card-content">
-          <h3>Trồng cây cùng FEATHER</h3>
-          <p>Mỗi sản phẩm bán ra, chúng tôi đóng góp một phần để cùng tổ chức phi lợi nhuận trồng cây gây rừng, hướng tới hệ sinh thái bền vững.</p>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn" data-article="2">Xem chi tiết</a>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="card">
-        <img src="../images/activity/education.png" alt="Giáo dục xanh">
-        <div class="card-content">
-          <h3>Giáo dục sống xanh</h3>
-          <p>FEATHER tổ chức workshop cho học sinh, sinh viên về lối sống xanh và tái sử dụng sản phẩm, nhằm lan tỏa ý thức bảo vệ môi trường.</p>
-        </div>
-        <div class="card-footer">
-          <a href="#" class="btn" data-article="3">Xem chi tiết</a>
-        </div>
+      <div class="card-footer">
+        <button class="btn" data-article="1">Xem chi tiết</button>
       </div>
     </div>
-  </main>
 
-  <!-- Modal -->
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <span class="close-btn" id="closeModal">&times;</span>
-      <div id="modal-body">
-        <!-- Nội dung chi tiết sẽ được JS chèn -->
+    <!-- Card 2 -->
+    <div class="card">
+      <img src="../images/activity/workshop.png" alt="Workshop">
+      <div class="card-content">
+        <h3>Workshop Trao đổi túi</h3>
+        <p>Mỗi sản phẩm bán ra, chúng tôi đóng góp một phần để cùng tổ chức phi lợi nhuận trồng cây gây rừng, hướng tới hệ sinh thái bền vững.</p>
+      </div>
+      <div class="card-footer">
+        <button class="btn" data-article="2">Xem chi tiết</button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <img src="../images/activity/feedback.png" alt="Green Feedback">
+      <div class="card-content">
+        <h3>Green Feedback</h3>
+        <p>FEATHER tổ chức workshop cho học sinh, sinh viên về lối sống xanh và tái sử dụng sản phẩm, nhằm lan tỏa ý thức bảo vệ môi trường.</p>
+      </div>
+      <div class="card-footer">
+        <button class="btn" data-article="3">Xem chi tiết</button>
       </div>
     </div>
   </div>
+
+  <!-- Section hiển thị chi tiết chung -->
+  <div id="detail-section" class="detail-section">
+    <!-- Nội dung chi tiết sẽ được JS đổ vào -->
+  </div>
+</main>
 
   <footer class="footer">
   <div class="footer-container">
@@ -371,40 +320,43 @@
 <!-- JS chỉ riêng trang Home -->
 <script src="../js/home.js"></script>
 
-  <script>
-    const articles = {
-      1: {
-        title: "Chiến dịch thu gom túi nhựa",
-        content: "Từ năm 2022, FEATHER đã phát động chiến dịch thu gom túi nhựa tại 10 trường đại học lớn ở Hà Nội. Hơn 50.000 túi đã được thu gom và tái chế thành vật liệu mới. Chương trình không chỉ giảm rác thải mà còn nâng cao ý thức bảo vệ môi trường của sinh viên."
-      },
-      2: {
-        title: "Trồng cây cùng FEATHER",
-        content: "Chúng tôi tin rằng mỗi sản phẩm bán ra đều có thể mang lại giá trị tích cực. Do đó, FEATHER cam kết trích một phần lợi nhuận để trồng cây xanh. Tính đến nay, đã có hơn 5.000 cây được trồng tại các khu rừng ở miền Trung Việt Nam."
-      },
-      3: {
-        title: "Giáo dục sống xanh",
-        content: "FEATHER thường xuyên tổ chức workshop và buổi nói chuyện tại các trường học nhằm khuyến khích học sinh, sinh viên sử dụng sản phẩm thân thiện môi trường, hạn chế rác thải nhựa và áp dụng lối sống bền vững trong đời sống hàng ngày."
-      }
-    };
+<script>
+  const articles = {
+  1: {
+    title: "Chiến dịch thu gom túi nhựa",
+    video: '<video controls><source src="../videos/collect.mp4" type="video/mp4">Trình duyệt không hỗ trợ video</video>',
+    image: '<img src="../images/activity/collect.png" alt="Thu gom túi nhựa">',
+    text: '<p>Chi tiết dài về chiến dịch thu gom túi nhựa, cách thức triển khai, điểm thu gom, số lượng túi đã thu, và hình ảnh minh họa.</p>'
+  },
+  2: {
+    title: "Workshop Trao đổi túi",
+    video: '<video controls><source src="../videos/workshop.mp4" type="video/mp4"></video>',
+    image: '<img src="../images/activity/workshop.png" alt="Workshop">',
+    text: '<p>Chi tiết về workshop trao đổi túi, nội dung workshop, hình ảnh sự kiện, các hoạt động tương tác với người tham gia, và kết quả đạt được.</p>'
+  },
+  3: {
+    title: "Green Feedback",
+    video: '<video controls><source src="../videos/feedback.mp4" type="video/mp4"></video>',
+    image: '<img src="../images/activity/feedback.png" alt="Green Feedback">',
+    text: '<p>Chi tiết về chương trình Green Feedback, các hoạt động giáo dục xanh, workshop cho học sinh và sinh viên, hình ảnh và video minh họa.</p>'
+  }
+};
 
-    const modal = document.getElementById('modal');
-    const modalBody = document.getElementById('modal-body');
-    const closeModal = document.getElementById('closeModal');
+const detailSection = document.getElementById('detail-section');
 
-    document.querySelectorAll('.btn[data-article]').forEach(btn=>{
-      btn.addEventListener('click', e=>{
-        e.preventDefault();
-        const id = btn.getAttribute('data-article');
-        modalBody.innerHTML = `
-          <h2>${articles[id].title}</h2>
-          <p>${articles[id].content}</p>
-        `;
-        modal.style.display = "flex";
-      });
-    });
+document.querySelectorAll('.btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = btn.getAttribute('data-article');
+    const article = articles[id];
 
-    closeModal.addEventListener('click', ()=> modal.style.display="none");
-    window.addEventListener('click', e=>{ if(e.target===modal) modal.style.display="none"; });
-  </script>
+    detailSection.innerHTML = `<h2>${article.title}</h2>${article.video}${article.image}${article.text}`;
+    detailSection.style.display = 'block';
+
+    // Cuộn xuống phần chi tiết
+    detailSection.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+</script>
 </body>
 </html>
