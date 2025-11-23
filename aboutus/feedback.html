@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FeedBack Khách Hàng</title>
+  <link rel="icon" href="../images/logo/LOGO_main.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/blog.css">
+  <link rel="stylesheet" href="../css/home_products.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+
+.poster-carousel {
+  position: relative;
+  width: 800px; /* nhỏ gọn */
+  margin: 60px auto 0 auto;
+}
+
+.poster-window {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.poster-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease;
+}
+
+.poster-slide {
+  min-width: 45%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.poster-slide img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Nút mờ, đặt ngoài carousel */
+.poster-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.2); /* mờ hơn */
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  z-index: 2;
+  transition: background 0.3s;
+}
+
+.poster-btn:hover {
+  background: rgba(0,0,0,0.35); /* hover hơi nổi */
+}
+
+#poster-prev {
+  left: -40px; /* đặt ngoài carousel trái */
+}
+
+#poster-next {
+  right: -40px; /* đặt ngoài carousel phải */
+}
+
+  </style>
+</head>
+<body>
+  <div class="navbar_1">
+    <nav>
+      <div class="navbar-inner">
+        <a class="welcome-text" href="#">Chào mừng đến với FEATHER – Nơi tìm kiếm phong cách cho riêng mình!</a>
+        <div class="contact">
+          <div class="contact-item">📞 0378295055</div>
+          <a class="contact-item zalo" href="" style="color: black;">Chat Zalo</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Header Section -->
+  <div class="navigation">
+    <header class="main-header">
+        <div class="logo">
+            <a href="#">
+                <img src="../images/logo/LOGO_main.PNG" alt="FEATHER">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <i class="fa fa-bars"></i>
+        </div>
+
+        <nav class="main-nav">
+  <a href="../index.html">TRANG CHỦ</a>
+
+  <div class="dropdown">
+    <a href="../products/feather.html" class="city-link">BỘ SƯU TẬP</a>
+    <div class="dropdown-content">
+      <div class="dropdown-region">
+      <a href="../products/feather.html">🌬️ THE ESSENCE OF AIR</a>
+      <a >🌿 GREEN ROOTS – Nature Reimagined</a>
+      <a >🕶️ TERRA – Rooted in Nature</a>
+      <a >✨ AURA – The Silent Grace</a>
+      </div>
+    </div>
+  </div>
+
+
+  <a href="blog.html">TIN TỨC</a>
+
+    <div class="dropdown">
+    <a href="brand.html" class="city-link">VỀ CHÚNG TÔI</a>
+      <div class="dropdown-content sub">
+        <div class="dropdown-region">
+          <a href="brand.html">🎶 Câu chuyện thương hiệu</a>
+          <a href="commit.html">🎭 Cam kết xanh</a>
+          <a href="partner.html"> 🎓 Đối tác - Khách hàng</a>
+          <a href="community.html"> ⚽ Chương trình cộng đồng</a>
+      </div> 
+    </div>
+  </div>
+  <a href="TrangLienHe.html">LIÊN HỆ</a>
+</nav>
+
+  <div class="search-wrapper">
+    <div class="search-input-container">
+      <input type="text" placeholder="Tìm kiếm...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+  </div> 
+
+  <div class="user-dropdown">
+    <div class="user-icon" id="userIcon">
+        <i class="fa fa-user"></i>
+    </div>
+    <div class="login" id="userMenu">
+        <a href="../user/DangKy_DangNhap.html">Đăng ký</a>
+        <a href="../user/DangKy_DangNhap.html">Đăng nhập</a>
+    </div>
+</div>
+</header>
+</div>
+
+<!-- FeedBack -->
+  <div class="poster-carousel">
+    <button id="poster-prev" class="poster-btn">❮</button>
+
+    <div class="poster-window">
+      <div class="poster-track">
+        <div class="poster-slide"><img src="../images/feedback/1.png" alt="Poster 1"></div>
+        <div class="poster-slide"><img src="../images/feedback/2.png" alt="Poster 2"></div>
+        <div class="poster-slide"><img src="../images/feedback/3.png" alt="Poster 3"></div>
+        <div class="poster-slide"><img src="../images/feedback/4.png" alt="Poster 4"></div>
+        <div class="poster-slide"><img src="../images/feedback/5.png" alt="Poster 5"></div>
+      </div>
+    </div>
+
+    <button id="poster-next" class="poster-btn">❯</button>
+  </div>
+  
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Cột 1: Thông tin liên hệ -->
+    <div class="footer-column">
+      <p><strong>Hotline</strong><br>📞 Thứ 2 - Chủ Nhật (8:30 - 23:00)<br>
+        <span class="hotline-number">0378295055</span>
+      </p>
+      <p><strong>Email</strong><br>📧 supportFeather@feather.vn</p>
+      <p><strong>Văn phòng</strong><br>
+        📍 Số 12 Học viện Ngân Hàng, Phường Kim Liên, Hà Nội
+      </p>
+    </div>
+
+    <!-- Cột 2: Dành cho khách + tổ chức + đăng ký email -->
+    <div class="footer-column">
+      <p><strong>Dành cho Khách hàng</strong></p>
+      <a href="">Điều khoản sử dụng cho khách hàng</a>
+
+      <p><strong>Dành cho Nhà Sản Xuất</strong></p>
+      <a href="">Điều khoản sử dụng cho nhà sản xuất</a>
+
+      <p><strong>Đăng ký nhận email về các sản phẩm mới nhất</strong></p>
+      <div class="email-subscribe">
+        <span class="email-icon">✅</span>
+        <input type="email" id="emailInput" placeholder="Your Email">
+        <button class="send-btn" onclick="checkEmail()">➤</button>
+      </div>
+      <p id="errorMsg" style="color: rgb(239, 85, 85); display: none;">Vui lòng nhập email</p>
+    </div>
+
+    <!-- Cột 3: Chính sách -->
+     <div class="footer-column">
+      <p><strong>Về chúng tôi</strong></p>
+      <p><a href="">Quy chế hoạt động</a></p>
+      <p><a href="">Chính sách bảo mật thông tin</a></p>
+      <p><a href="">Cơ chế giải quyết tranh chấp/ khiếu nại</a></p>
+      <p><a href="">Chính sách bảo mật thanh toán</a></p>
+      <p><a href="">Chính sách đổi trả và kiểm hàng</a></p>
+      <p><a href="">Điều kiện vận chuyển và giao nhận</a></p>
+      <p><a href="">Phương thức thanh toán</a></p>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Nút Zalo với chữ -->
+  <a id="zaloBtn" href="" target="_blank" title="Liên hệ Zalo">
+    Zalo
+  </a>
+
+  <!-- Nút lên đầu trang -->
+  <button id="backToTopBtn" title="Lên đầu trang">
+    <i class="fas fa-home"></i>
+  </button>
+  
+<!-- JS riêng của header - footer -->
+<script src="js/learn.js"></script>
+
+<!-- JS chỉ riêng trang Home -->
+<script src="js/home.js"></script>
+
+<script>
+  const posterTrack = document.querySelector('.poster-track');
+const posterSlides = Array.from(posterTrack.children);
+const prevBtn = document.getElementById('poster-prev');
+const nextBtn = document.getElementById('poster-next');
+
+let currentIndex = 0;
+const itemsToShow = 2;
+
+function updatePosterCarousel() {
+  const slideWidth = posterSlides[0].getBoundingClientRect().width;
+  posterTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
+
+// Nút Next
+nextBtn.addEventListener('click', () => {
+  currentIndex++;
+  if (currentIndex > posterSlides.length - itemsToShow) {
+    currentIndex = 0; // quay về đầu
+  }
+  updatePosterCarousel();
+});
+
+// Nút Prev
+prevBtn.addEventListener('click', () => {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = posterSlides.length - itemsToShow; // quay về cuối
+  }
+  updatePosterCarousel();
+});
+
+// Khởi tạo
+updatePosterCarousel();
+
+</script>
+</body>
+</html>

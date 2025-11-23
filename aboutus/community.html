@@ -16,11 +16,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
-    :root{
-      --card-bg: #fff;
-      --shadow: 0 4px 16px rgba(0,0,0,0.08);
-      --radius: 14px;
-    }
+
     body{
       margin:0;
       font-family: "Segoe UI", Arial, sans-serif;
@@ -101,13 +97,9 @@
   transition: all 0.3s ease;
   text-align: center;
 }
-
-.btn:hover {
-  background-color: #d65643;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+.btn :hover {
+  text-decoration: none;
 }
-
 
 .detail-section {
   display: none; /* ẩn mặc định */
@@ -225,7 +217,7 @@
         <p>FEATHER phối hợp với các trường đại học tại Hà Nội triển khai điểm thu gom túi nhựa đã qua sử dụng, góp phần giảm rác thải nhựa trong cộng đồng.</p>
       </div>
       <div class="card-footer">
-        <button class="btn" data-article="1">Xem chi tiết</button>
+        <a href="collect.html" class="btn">Xem chi tiết</a>
       </div>
     </div>
 
@@ -237,8 +229,8 @@
         <p>Mỗi sản phẩm bán ra, chúng tôi đóng góp một phần để cùng tổ chức phi lợi nhuận trồng cây gây rừng, hướng tới hệ sinh thái bền vững.</p>
       </div>
       <div class="card-footer">
-        <button class="btn" data-article="2">Xem chi tiết</button>
-      </div>
+        <a href="workshop.html" class="btn">Xem chi tiết</a>
+      </div>  
     </div>
 
     <!-- Card 3 -->
@@ -249,15 +241,11 @@
         <p>FEATHER tổ chức workshop cho học sinh, sinh viên về lối sống xanh và tái sử dụng sản phẩm, nhằm lan tỏa ý thức bảo vệ môi trường.</p>
       </div>
       <div class="card-footer">
-        <button class="btn" data-article="3">Xem chi tiết</button>
+        <a href="feedback.html" class="btn">Xem chi tiết</a>
       </div>
     </div>
   </div>
 
-  <!-- Section hiển thị chi tiết chung -->
-  <div id="detail-section" class="detail-section">
-    <!-- Nội dung chi tiết sẽ được JS đổ vào -->
-  </div>
 </main>
 
   <footer class="footer">
@@ -320,43 +308,5 @@
 <!-- JS chỉ riêng trang Home -->
 <script src="../js/home.js"></script>
 
-<script>
-  const articles = {
-  1: {
-    title: "Chiến dịch thu gom túi nhựa",
-    video: '<video controls><source src="../videos/collect.mp4" type="video/mp4">Trình duyệt không hỗ trợ video</video>',
-    image: '<img src="../images/activity/collect.png" alt="Thu gom túi nhựa">',
-    text: '<p>Chi tiết dài về chiến dịch thu gom túi nhựa, cách thức triển khai, điểm thu gom, số lượng túi đã thu, và hình ảnh minh họa.</p>'
-  },
-  2: {
-    title: "Workshop Trao đổi túi",
-    video: '<video controls><source src="../videos/workshop.mp4" type="video/mp4"></video>',
-    image: '<img src="../images/activity/workshop.png" alt="Workshop">',
-    text: '<p>Chi tiết về workshop trao đổi túi, nội dung workshop, hình ảnh sự kiện, các hoạt động tương tác với người tham gia, và kết quả đạt được.</p>'
-  },
-  3: {
-    title: "Green Feedback",
-    video: '<video controls><source src="../videos/feedback.mp4" type="video/mp4"></video>',
-    image: '<img src="../images/activity/feedback.png" alt="Green Feedback">',
-    text: '<p>Chi tiết về chương trình Green Feedback, các hoạt động giáo dục xanh, workshop cho học sinh và sinh viên, hình ảnh và video minh họa.</p>'
-  }
-};
-
-const detailSection = document.getElementById('detail-section');
-
-document.querySelectorAll('.btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const id = btn.getAttribute('data-article');
-    const article = articles[id];
-
-    detailSection.innerHTML = `<h2>${article.title}</h2>${article.video}${article.image}${article.text}`;
-    detailSection.style.display = 'block';
-
-    // Cuộn xuống phần chi tiết
-    detailSection.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
-</script>
 </body>
 </html>
