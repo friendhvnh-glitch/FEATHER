@@ -1,0 +1,99 @@
+/* CSS — chỉ ảnh hưởng tới các lớp bên dưới, KHÔNG chỉnh body */
+:root{
+  --card-bg: #ffffff;
+  --surface-shadow: 0 8px 20px rgba(12,20,30,0.06);
+  --accent: #0b8457; /* xanh chủ đạo */
+  --muted: #616161;
+  --radius: 12px;
+  --gap: 20px;
+}
+
+/* Container 3 khung */
+.three-cards{
+  display: flex;
+  gap: var(--gap);
+  align-items: stretch;   /* cho chiều cao bằng nhau */
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 0;        /* khoảng cách trên/dưới của khối này */
+}
+
+/* Mỗi khung */
+.three-cards .card{
+  flex: 1 1 0;            /* chia đều, có thể co dãn */
+  min-width: 240px;       /* tránh quá nhỏ khi còn ngang */
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--surface-shadow);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* hiệu ứng hover nhẹ */
+.three-cards .card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(12,20,30,0.09);
+}
+
+/* icon nhỏ bên trái/đầu */
+.card-icon{
+  font-size: 28px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(11,132,87,0.08);
+  color: var(--accent);
+}
+
+/* tiêu đề */
+.card-title{
+  margin: 0;
+  font-size: 1.05rem;
+  color: #111;
+  line-height: 1.2;
+}
+
+/* mô tả */
+.card-desc{
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  /* cho phần mô tả chiếm không gian chính */
+  flex: 1 1 auto;
+}
+
+/* chân khung: link hoặc nút */
+.card-foot{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+/* link nhỏ */
+.card-link{
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+/* responsive: khi nhỏ hơn (tablet / điện thoại) xếp dọc */
+@media (max-width: 880px){
+  .three-cards{
+    flex-direction: column;
+    gap: 16px;
+  }
+  .three-cards .card{
+    min-width: auto;
+  }
+}

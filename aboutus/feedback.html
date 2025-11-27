@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -78,6 +79,17 @@
   right: -40px; /* đặt ngoài carousel phải */
 }
 
+@media (max-width: 880px) {
+  .poster-carousel {
+    width: 95%;
+    margin: 40px auto;
+  }
+  .poster-slide {
+    min-width: 100%;  /* 1 item 1 dòng */
+  }
+  #poster-prev { left: 5px; }
+  #poster-next { right: 5px; }
+}
   </style>
 </head>
 <body>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FeedBack Khách Hàng</title>
+  <link rel="icon" href="../images/logo/LOGO_main.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/blog.css">
+  <link rel="stylesheet" href="../css/home_products.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+
+/* campaign.css - CSS cho trang chiến dịch */
+
+/* Basic reset & variables */
+:root{
+  --accent:#2a9d8f;
+  --dark:#264653;
+  --muted:#6b7280;
+  --bg:#f7faf9;
+  --container-max:1100px;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#122;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Utility container */
+.container{max-width:var(--container-max);margin:0 auto;padding:0 18px;}
+
+/* Header */
+.site-header{background:white;box-shadow:0 2px 10px rgba(18,34,46,0.06);position:sticky;top:0;z-index:40}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding:14px 18px}
+.brand{font-weight:700;color:var(--dark);text-decoration:none;font-size:1.05rem}
+.top-nav a{margin-left:18px;color:#374151;text-decoration:none;font-size:0.95rem}
+.top-nav .btn-outline{padding:8px 12px;border:1px solid #e5e7eb;border-radius:8px}
+
+/* Banner */
+.banner{position:relative}
+.banner img{width:100%;height:auto;object-fit:cover;display:block;border-bottom-left-radius:18px;border-bottom-right-radius:18px}
+.banner-inner{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;color:white;max-width:900px;padding:20px}
+.banner-inner h1{font-size:2rem;letter-spacing:0.6px;margin-bottom:8px;text-shadow:0 6px 18px rgba(0,0,0,0.25)}
+.banner-inner p{opacity:0.95;margin-bottom:14px}
+.btn-primary{background:var(--accent);color:white;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:600;display:inline-block}
+.btn-primary:hover{filter:brightness(.95)}
+
+/* Section */
+.section{padding:42px 0;border-bottom:1px solid rgba(15,23,42,0.03)}
+.section-title{font-size:1.25rem;color:var(--dark);margin-bottom:18px}
+
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{background:white;padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.04)}
+.card h2{margin-top:0;color:var(--dark)}
+.card ul{margin-top:10px;padding-left:18px;color:var(--muted)}
+
+/* Steps */
+.steps{list-style:none;padding-left:0;color:var(--muted);line-height:1.6}
+.steps li{margin-bottom:10px;background:linear-gradient(transparent,transparent)}
+
+/* Video */
+.video-wrapper{max-width:900px;margin:12px auto 0;border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+.muted.small{color:var(--muted);font-size:0.9rem; margin-top:8px}
+
+/* Gallery */
+.gallery{display:flex;gap:16px;flex-wrap:wrap}
+.gallery figure{background:white;border-radius:10px;overflow:hidden;flex:1 1 280px;box-shadow:0 6px 18px rgba(2,6,23,0.04);margin:0}
+.gallery img{width:100%;height:180px;object-fit:cover;display:block}
+.gallery figcaption{padding:10px;font-size:0.95rem;color:var(--muted)}
+
+/* CTA */
+.cta-section{display:flex;justify-content:center;padding:44px 0}
+.cta-card{background:linear-gradient(180deg,#ffffff,#f7fcfb);padding:30px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,0.06);text-align:center;max-width:760px}
+.cta-card h2{margin:0 0 8px;color:var(--dark)}
+.cta-card p{color:var(--muted);margin-bottom:16px}
+
+/* Footer */
+.site-footer{padding:30px 0;text-align:center;color:var(--muted)}
+.site-footer a{color:var(--dark);text-decoration:none}
+
+/* Register quick form */
+.modal-anchor{background:linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.03));padding:30px 0}
+.register-card{background:white;border-radius:12px;padding:20px;box-shadow:0 8px 26px rgba(2,6,23,0.06);max-width:760px;margin:24px auto}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-grid label{display:block;font-size:0.95rem;color:#2b3440}
+.form-grid input{width:100%;padding:10px;border:1px solid #e6e9ee;border-radius:8px;margin-top:6px}
+.form-grid .submit-row{grid-column:1 / -1;display:flex;gap:12px;align-items:center;justify-content:flex-end}
+
+/* Small screens */
+@media (max-width:900px){
+  .banner img{height:auto}
+  .banner-inner h1{font-size:1.6rem}
+  .card-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .video-wrapper iframe{height:260px}
+  .top-nav{display:none} /* simplify header on small screens */
+  .site-header .container{justify-content:space-between}
+}
+
+/* Tiny */
+@media (max-width:420px){
+  .banner img{height:auto}
+  .banner-inner p{font-size:0.95rem}
+  .banner-inner{padding:10px}
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="navbar_1">
+    <nav>
+      <div class="navbar-inner">
+        <a class="welcome-text" href="#">Chào mừng đến với FEATHER – Nơi tìm kiếm phong cách cho riêng mình!</a>
+        <div class="contact">
+          <div class="contact-item">📞 0378295055</div>
+          <a class="contact-item zalo" href="" style="color: black;">Chat Zalo</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Header Section -->
+  <div class="navigation">
+    <header class="main-header">
+        <div class="logo">
+            <a href="#">
+                <img src="../images/logo/LOGO_main.PNG" alt="FEATHER">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <i class="fa fa-bars"></i>
+        </div>
+
+        <nav class="main-nav">
+  <a href="../index.html">TRANG CHỦ</a>
+
+  <div class="dropdown">
+    <a href="../products/feather.html" class="city-link">BỘ SƯU TẬP</a>
+    <div class="dropdown-content">
+      <div class="dropdown-region">
+      <a href="../products/feather.html">🌬️ THE ESSENCE OF AIR</a>
+      <a >🌿 GREEN ROOTS – Nature Reimagined</a>
+      <a >🕶️ TERRA – Rooted in Nature</a>
+      <a >✨ AURA – The Silent Grace</a>
+      </div>
+    </div>
+  </div>
+
+
+  <a href="blog.html">TIN TỨC</a>
+
+    <div class="dropdown">
+    <a href="brand.html" class="city-link">VỀ CHÚNG TÔI</a>
+      <div class="dropdown-content sub">
+        <div class="dropdown-region">
+          <a href="brand.html">🎶 Câu chuyện thương hiệu</a>
+          <a href="commit.html">🎭 Cam kết xanh</a>
+          <a href="partner.html"> 🎓 Đối tác - Khách hàng</a>
+          <a href="community.html"> ⚽ Chương trình cộng đồng</a>
+      </div> 
+    </div>
+  </div>
+  <a href="TrangLienHe.html">LIÊN HỆ</a>
+</nav>
+
+  <div class="search-wrapper">
+    <div class="search-input-container">
+      <input type="text" placeholder="Tìm kiếm...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+  </div> 
+
+  <div class="user-dropdown">
+    <div class="user-icon" id="userIcon">
+        <i class="fa fa-user"></i>
+    </div>
+    <div class="login" id="userMenu">
+        <a href="../user/DangKy_DangNhap.html">Đăng ký</a>
+        <a href="../user/DangKy_DangNhap.html">Đăng nhập</a>
+    </div>
+</div>
+</header>
+</div>
+
+ 
+
+  <!-- Banner -->
+  <section class="banner">
+    <img src="../images/activity/tagom.png" alt="Chiến dịch thu gom túi" />
+  </section>
+
+  <!-- About -->
+  <main class="container">
+    <section id="about" class="section card-grid">
+      <div class="card">
+        <h2>Mục tiêu</h2>
+        <p>Thu gom túi nhựa khó phân hủy, giảm lượng rác thải nhựa tại nguồn và tái chế/đổi thành túi thân thiện sử dụng lại.</p>
+        <ul>
+          <li>Giảm thiểu túi nhựa ra môi trường</li>
+          <li>Nâng cao nhận thức sống xanh</li>
+          <li>Tái sử dụng & tái chế</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Ai nên tham gia?</h2>
+        <p>Mọi cá nhân, hộ gia đình, cửa hàng và tổ chức có túi nhựa dư thừa muốn đổi hoặc đóng góp cho cộng đồng.</p>
+      </div>
+    </section>
+
+    <!-- How to participate -->
+    <section id="how" class="section">
+      <h2 class="section-title">Cách tham gia</h2>
+      <ol class="steps">
+        <li>
+          <strong>Bước 1:</strong> Thu gom túi nhựa (sạch, loại bỏ rác lớn, bó gọn).
+        </li>
+        <li>
+          <strong>Bước 2:</strong> Mang đến điểm thu gom hoặc đăng ký để chúng tôi đến lấy.
+        </li>
+        <li>
+          <strong>Bước 3:</strong> Đổi lấy túi thân thiện (số lượng/điều kiện áp dụng theo quy định).
+        </li>
+        <li>
+          <strong>Bước 4:</strong> Tham gia hoạt động cộng đồng, nhận quà & chia sẻ câu chuyện của bạn.
+        </li>
+      </ol>
+    </section>
+
+    <!-- Schedule -->
+    <section id="schedule" class="section card-grid">
+      <div class="card">
+        <h2>Lịch & địa điểm</h2>
+        <p><strong>Ngày:</strong> 30Tháng 11, 2025</p>
+        <p><strong>Địa điểm chính:</strong> TAGOM</p>
+      </div>
+
+      <div class="card">
+        <h2>Quy đổi & Thưởng</h2>
+        <p>Mỗi 5 túi nhựa đạt chuẩn đổi 1 túi thân thiện; có thêm quà tặng cho 100 người đầu tiên mỗi ngày.</p>
+      </div>
+    </section>
+
+    <!-- Video -->
+    <section id="video" class="section">
+      <h2 class="section-title">Video sự kiện / Giới thiệu</h2>
+
+      <div class="video-wrapper">
+        <!-- Facebook Video Plugin (fallback link dưới) -->
+        <iframe
+          src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/v/16nECehx21/&show_text=0&width=560"
+          title="Facebook video"
+          width="100%"
+          height="400"
+          style="border:none;overflow:hidden"
+          scrolling="no"
+          allowFullScreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+        </iframe>
+      </div>
+
+      <p class="muted small">Nếu video không hiển thị do chặn nhúng, bạn có thể xem trực tiếp tại:
+        <a href="https://web.facebook.com/share/v/16nECehx21/" target="_blank" rel="nofollow noopener">https://web.facebook.com/share/v/16nECehx21/</a>
+      </p>
+    </section>
+
+    <!-- Gallery small (few images) -->
+    <section class="section">
+      <h2 class="section-title">Một vài khoảnh khắc</h2>
+      <div class="gallery">
+        <figure><img src="https://images.unsplash.com/photo-1514894782310-3da7e3e3d0a1?auto=format&fit=crop&w=600&q=60" alt="moment 1"><figcaption>Thu gom tại điểm tập kết</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=60" alt="moment 2"><figcaption>Đổi túi thân thiện</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="section cta-section">
+      <div class="cta-card">
+        <h2>Tham gia chiến dịch</h2>
+        <p>Đăng ký để nhận bộ hướng dẫn thu gom & địa điểm gần nhất chúng tôi sẽ hỗ trợ.</p>
+        <a class="btn-primary" href="#register">Đăng ký / Liên hệ</a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>&copy; 2025 FEATHER · Tất cả quyền được bảo lưu</p>
+        <p>Hotline: <a href="tel:0378295055">0378 295 055</a></p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Small registration modal (simple anchor target) -->
+  <div id="register" class="modal-anchor">
+    <div class="register-card container">
+      <h3>Form đăng ký (nhanh)</h3>
+      <form action="#" method="post" class="form-grid">
+        <label>
+          Họ & tên
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          Số điện thoại
+          <input type="tel" name="phone" required />
+        </label>
+        <label>
+          Địa chỉ / Ghi chú
+          <input type="text" name="address" />
+        </label>
+        <label class="submit-row">
+          <button type="submit" class="btn-primary">Gửi đăng ký</button>
+          <a href="#top" class="btn-outline">Đóng</a>
+        </label>
+      </form>
+    </div>
+  </div>
+
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Cột 1: Thông tin liên hệ -->
+    <div class="footer-column">
+      <p><strong>Hotline</strong><br>📞 Thứ 2 - Chủ Nhật (8:30 - 23:00)<br>
+        <span class="hotline-number">0378295055</span>
+      </p>
+      <p><strong>Email</strong><br>📧 supportFeather@feather.vn</p>
+      <p><strong>Văn phòng</strong><br>
+        📍 Số 12 Học viện Ngân Hàng, Phường Kim Liên, Hà Nội
+      </p>
+    </div>
+
+    <!-- Cột 2: Dành cho khách + tổ chức + đăng ký email -->
+    <div class="footer-column">
+      <p><strong>Dành cho Khách hàng</strong></p>
+      <a href="">Điều khoản sử dụng cho khách hàng</a>
+
+      <p><strong>Dành cho Nhà Sản Xuất</strong></p>
+      <a href="">Điều khoản sử dụng cho nhà sản xuất</a>
+
+      <p><strong>Đăng ký nhận email về các sản phẩm mới nhất</strong></p>
+      <div class="email-subscribe">
+        <span class="email-icon">✅</span>
+        <input type="email" id="emailInput" placeholder="Your Email">
+        <button class="send-btn" onclick="checkEmail()">➤</button>
+      </div>
+      <p id="errorMsg" style="color: rgb(239, 85, 85); display: none;">Vui lòng nhập email</p>
+    </div>
+
+    <!-- Cột 3: Chính sách -->
+     <div class="footer-column">
+      <p><strong>Về chúng tôi</strong></p>
+      <p><a href="">Quy chế hoạt động</a></p>
+      <p><a href="">Chính sách bảo mật thông tin</a></p>
+      <p><a href="">Cơ chế giải quyết tranh chấp/ khiếu nại</a></p>
+      <p><a href="">Chính sách bảo mật thanh toán</a></p>
+      <p><a href="">Chính sách đổi trả và kiểm hàng</a></p>
+      <p><a href="">Điều kiện vận chuyển và giao nhận</a></p>
+      <p><a href="">Phương thức thanh toán</a></p>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Nút Zalo với chữ -->
+  <a id="zaloBtn" href="" target="_blank" title="Liên hệ Zalo">
+    Zalo
+  </a>
+
+  <!-- Nút lên đầu trang -->
+  <button id="backToTopBtn" title="Lên đầu trang">
+    <i class="fas fa-home"></i>
+  </button>
+  
+<!-- JS riêng của header - footer -->
+<script src="../js/learn.js"></script>
+
+<!-- JS chỉ riêng trang Home -->
+<script src="../js/home.js"></script>
+
+</body>
+</html>

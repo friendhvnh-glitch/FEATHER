@@ -98,41 +98,60 @@
       margin-bottom: 30px;
       color: #222;
     }
-    .news-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .news-card {
-      background: #fefefe;
-      border-radius: 10px;
-      width: 300px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-    .news-card:hover {
-      transform: translateY(-8px);
-    }
-    .news-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .news-card .content {
-      padding: 15px;
-    }
-    .news-card h3 {
-      margin: 0;
-      font-size: 20px;
-      color: #1e90ff;
-    }
-    .news-card p {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #555;
-    }
+    /* Container chứa các news-card */
+.news-container {
+  display: flex;
+  gap: 20px;          /* khoảng cách giữa các card */
+  flex-wrap: wrap;     /* cho phép xuống dòng khi cần */
+  justify-content: space-between;
+}
+
+/* Mỗi news card */
+.news-card {
+  flex: 1 1 30%;      /* mỗi card chiếm khoảng 1/3, có thể co dãn */
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hình ảnh */
+.news-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Nội dung text */
+.news-card .content {
+  padding: 15px;
+}
+
+.news-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.news-card p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Responsive: mỗi card 1 dòng khi màn hình nhỏ */
+@media (max-width: 880px) {
+  .news-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .news-card {
+    flex: 1 1 100%;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -179,7 +198,7 @@
   <a href="blog.html">TIN TỨC</a>
 
     <div class="dropdown">
-    <a href="../aboutus/brand.html" class="city-link">VỀ CHÚNG TÔI</a>
+    <a href="brand.html" class="city-link">VỀ CHÚNG TÔI</a>
       <div class="dropdown-content sub">
         <div class="dropdown-region">
           <a href="brand.html">🎶 Câu chuyện thương hiệu</a>
@@ -213,13 +232,9 @@
 
  <div class="banner">
     <video autoplay muted loop playsinline>
-      <source src="../video/partner.mp4" type="video/mp4">
+      <source src="../images/partner.mp4" type="video/mp4">
       Trình duyệt của bạn không hỗ trợ video nền.
     </video>
-    <div>
-      <h1>Đối tác & Khách hàng</h1>
-      <p>Chúng tôi tự hào đồng hành cùng nhiều thương hiệu lớn và khách hàng thân thiết</p>
-    </div>
   </div>
 
   <!-- Partners -->
