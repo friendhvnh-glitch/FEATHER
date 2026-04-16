@@ -20,31 +20,12 @@
     }
 
     /* ===== Hero Section ===== */
-.hero-header {
-  position: relative;
-  width: 100%;
-  height: 90vh; /* Chiếm 90% chiều cao màn hình */
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Đảm bảo video phủ toàn màn */
-  z-index: 1;
-  filter: brightness(60%); /* Làm mờ nhẹ để chữ nổi bật */
-}
 
   .intro {
     background-image: url('../images/story/story5.png');
     max-width: 1200px;
-    margin: 100px auto;
+    margin: 0px auto;
     padding: 40px 20px;
     display: flex;
     justify-content: center;
@@ -305,13 +286,6 @@
   </style>
 </head>
 <body>
-
-<header class="hero-header" data-aos="fade-down">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="../images/feather.mp4" type="video/mp4">
-    Trình duyệt của bạn không hỗ trợ video.
-  </video>
-</header>
 
 
   <section class="intro" data-aos="fade-up">
